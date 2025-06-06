@@ -22,6 +22,7 @@ scaler = StandardScaler()
 food_features = scaler.fit_transform(food_data.values)
 
 # Step 2: Generate synthetic user profiles
+# TODO: return np.arrary(profiles) -> take this data from bmi.csv
 def generate_user_profiles(n):
     profiles = []
     for _ in range(n):
@@ -119,6 +120,7 @@ def recommend(user_input, top_k=3):
     return top_idx
 
 # Example:
+# TODO: user_input -> user_dictionary = [{ 'age': 27, 'height': 170 }]
 user_input = [27, 80, 170, 0, 0, 0]  # Age, weight, height, male, sedentary, weight loss
 top_indexes = recommend(user_input, top_k=3)
 print("Recommended food indexes:", top_indexes)
